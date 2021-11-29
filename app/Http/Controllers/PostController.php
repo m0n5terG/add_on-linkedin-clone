@@ -63,9 +63,9 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $postID)
+    public function show(Post $post)
     {
-        $post = Post::where('id', $postID)->first();
+        $post = Post::where('id', $post->id)->first();
         $user = Auth::user();
         
         return view('post.show', [
